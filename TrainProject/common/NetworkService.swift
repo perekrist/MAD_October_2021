@@ -9,6 +9,13 @@ import Foundation
 import Alamofire
 import NotificationBannerSwift
 
+extension NetworkService {
+  func getChats(completion: @escaping (([ChatsResponse]) -> ())) {
+    baseRequest(url: "/chat", method: .get) { response in
+      completion(response)
+    }
+  }
+}
 
 extension NetworkService {
   func login(email: String, password: String,
@@ -36,17 +43,17 @@ class NetworkService {
   
   static let baseURL = "http://45.144.179.101/scare-me/api/mobile/v1"
   func baseRequest<T: Decodable>(url: String, method: HTTPMethod,
-                                 parameters: Parameters,
+                                 parameters: Parameters? = nil,
                                  completion: @escaping ((T) -> ())) {
     var headers: HTTPHeaders = [:]
     if let token = UserDefaults.standard.value(forKey: "token") as? String,
         !token.isEmpty {
-      headers["Authorization"] = "Bearer" + token
+      headers["Authorization"] = "Bearer " + token
     }
     AF.request(NetworkService.baseURL + url,
                method: method,
                parameters: parameters,
-               encoding: URLEncoding.default,
+               encoding: JSONEncoding.default,
                headers: headers)
       .responseData { response in
         print(response.request?.url, response.request?.headers, parameters)

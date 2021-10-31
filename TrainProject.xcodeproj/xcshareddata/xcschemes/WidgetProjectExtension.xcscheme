@@ -30,7 +30,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "CAD9AB29272E5C5900E3DE37"
-               BuildableName = "TrainProject.app"
+               BuildableName = "ScareMe.app"
                BlueprintName = "TrainProject"
                ReferencedContainer = "container:TrainProject.xcodeproj">
             </BuildableReference>
@@ -62,7 +62,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "CAD9AB29272E5C5900E3DE37"
-            BuildableName = "TrainProject.app"
+            BuildableName = "ScareMe.app"
             BlueprintName = "TrainProject"
             ReferencedContainer = "container:TrainProject.xcodeproj">
          </BuildableReference>
@@ -97,7 +97,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "CAD9AB29272E5C5900E3DE37"
-            BuildableName = "TrainProject.app"
+            BuildableName = "ScareMe.app"
             BlueprintName = "TrainProject"
             ReferencedContainer = "container:TrainProject.xcodeproj">
          </BuildableReference>
