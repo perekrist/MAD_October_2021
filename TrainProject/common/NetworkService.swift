@@ -9,10 +9,17 @@ import Foundation
 import Alamofire
 import NotificationBannerSwift
 
+extension NetworkService {
+  func getTopics(completion: @escaping (([Topic]) -> ())) {
+    baseRequest(url: "/topic", method: .get) { topics in
+      completion(topics)
+    }
+  }
+}
 
 extension NetworkService {
   func login(email: String, password: String,
-              completion: @escaping ((AuthResponse) -> ())) {
+             completion: @escaping ((AuthResponse) -> ())) {
     let parameters = ["email": email,
                       "password": password]
     baseRequest(url: "/auth/login", method: .post,
@@ -36,7 +43,7 @@ class NetworkService {
   
   static let baseURL = "http://45.144.179.101/scare-me/api/mobile/v1"
   func baseRequest<T: Decodable>(url: String, method: HTTPMethod,
-                                 parameters: Parameters,
+                                 parameters: Parameters? = nil,
                                  completion: @escaping ((T) -> ())) {
     var headers: HTTPHeaders = [:]
     if let token = UserDefaults.standard.value(forKey: "token") as? String,
@@ -46,10 +53,11 @@ class NetworkService {
     AF.request(NetworkService.baseURL + url,
                method: method,
                parameters: parameters,
-               encoding: URLEncoding.default,
+               encoding: JSONEncoding.default,
                headers: headers)
       .responseData { response in
-        print(response.request?.url, response.request?.headers, parameters)
+        print(response.request)
+        print(response.response)
         switch response.result {
         case .success(let data):
           let decoder = JSONDecoder()

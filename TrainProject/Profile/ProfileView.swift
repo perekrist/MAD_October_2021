@@ -7,20 +7,27 @@
 
 import SwiftUI
 
-struct Topic {
-  let id: String = UUID().uuidString
-  let name: String
-  var isSelected: Bool = Bool.random()
+struct Topic: Codable, Identifiable {
+  let id: String
+  let title: String
+  var isSelected: Bool = false
+  
+  init(from decoder: Decoder) throws {
+    let container = try decoder.container(keyedBy: CodingKeys.self)
+    id = try container.decode(String.self, forKey: .id)
+    title = try container.decode(String.self, forKey: .title)
+  }
 }
 
 struct ProfileView: View {
+  @ObservedObject var viewModel = ProfileViewModel()
+  
   @State var name: String = ""
   @State var about: String = ""
-  @State var topics: [Topic] = [Topic(name: "Pumpkins"),
-                                Topic(name: "Marvel Heroes"),
-                                Topic(name: "Ghosts")]
   
   var body: some View {
+    var width = CGFloat.zero
+    var height = CGFloat.zero
     ZStack {
       Color.dark.edgesIgnoringSafeArea(.all)
       VStack {
@@ -58,22 +65,43 @@ struct ProfileView: View {
           .font(.regular(24))
           .padding(.top, 24)
         
-        LazyHGrid(rows: [GridItem(.flexible(minimum: 0, maximum: 400),
-                                  spacing: 9,
-                                  alignment: .leading)]) {
-          ForEach(topics, id: \.id) { topic in
-            Text(topic.name)
-              .foregroundColor(topic.isSelected ? .dark : .orangeLight)
-              .font(.regular(14))
-              .background(!topic.isSelected ? Color.dark : Color.orangeLight)
-              .clipShape(Capsule())
-//              .onTapGesture {
-//                let index = topics.firstIndex(of: $0.id == topic.id)
-//                topics[index].isSelected.toggle()
-//              }
-            
-          }
-        }
+        GeometryReader { geo in
+          ZStack(alignment: .topLeading, content: {
+            ForEach(viewModel.topics) { topic in
+              Text(topic.title)
+                .padding(.horizontal)
+                .foregroundColor(topic.isSelected ? .dark : .orangeLight)
+                .font(.regular(14))
+                .background(!topic.isSelected ? Color.dark : Color.orangeLight)
+                .clipShape(Capsule())
+                .overlay(
+                  Capsule()
+                    .stroke(Color.orangeLight, lineWidth: 1)
+                )
+                .alignmentGuide(.leading) { dimension in
+                  if (abs(width - dimension.width) > geo.size.width) {
+                    width = 0
+                    height -= dimension.height
+                  }
+                  let result = width
+                  if topic.id == viewModel.topics.last!.id {
+                    width = 0
+                  } else {
+                    width -= dimension.width
+                  }
+                  return result
+                }
+                .alignmentGuide(.top) { dimension in
+                  let result = height
+                  if topic.id == viewModel.topics.last!.id {
+                    height = 0
+                  }
+                  return result
+                }
+                .padding(7)
+            }
+          })
+        }.padding()
         
         Spacer()
         
@@ -94,6 +122,9 @@ struct ProfileView: View {
                     x: 0, y: 0)
         }
       }
-    }.navigationBarHidden(true)
+    }.onAppear {
+      viewModel.getTopics()
+    }
+    .navigationBarHidden(true)
   }
 }

@@ -110,15 +110,11 @@ struct AuthScreen: View {
                          password: password) {
           canLogin = true
         }
-        //
-        canLogin = true
       } else {
         viewModel.signUp(email: email,
                          password: password) {
           canLogin = true
         }
-        //
-        canLogin = true
       }
     }
   }

@@ -9,17 +9,19 @@ import Foundation
 
 struct AuthResponse: Codable {
   let accessToken: String
-  let accessTokenExpiredAt: Date?
+  let accessTokenExpiredAt: String
   let refreshToken: String
-  let refreshTokenExpiredAt: Date?
+  let refreshTokenExpiredAt: String
   
   init(from decoder: Decoder) throws {
     let container = try decoder.container(keyedBy: CodingKeys.self)
-    accessToken = try container.decode(String.self, forKey: .accessToken)
-    accessTokenExpiredAt = try container.decodeIfPresent(Date.self,
-                                                         forKey: .accessTokenExpiredAt) ?? Date()
-    refreshToken = try container.decode(String.self, forKey: .refreshToken)
-    refreshTokenExpiredAt = try container.decodeIfPresent(Date.self,
-                                                          forKey: .refreshTokenExpiredAt) ?? Date()
+    accessToken = try container.decode(String.self,
+                                                forKey: .accessToken)
+    accessTokenExpiredAt = try container.decode(String.self,
+                                                         forKey: .accessTokenExpiredAt)
+    refreshToken = try container.decode(String.self,
+                                                 forKey: .refreshToken)
+    refreshTokenExpiredAt = try container.decode(String.self,
+                                                          forKey: .refreshTokenExpiredAt)
   }
 }
