@@ -70,9 +70,9 @@ struct AuthScreen: View {
         
         NavigationLink(isActive: $canLogin) {
           if isSignIn {
-            EmptyView()
+            MainView()
           } else {
-            EmptyView()
+            ProfileView()
           }
         } label: {
           Text(isSignIn ? "Sign In" : "Sign Up")
@@ -110,11 +110,15 @@ struct AuthScreen: View {
                          password: password) {
           canLogin = true
         }
+        //
+        canLogin = true
       } else {
         viewModel.signUp(email: email,
                          password: password) {
           canLogin = true
         }
+        //
+        canLogin = true
       }
     }
   }

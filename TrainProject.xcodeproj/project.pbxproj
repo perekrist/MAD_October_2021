@@ -37,6 +37,8 @@
 		CAD9ABA7272E9AC700E3DE37 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CAD9ABA6272E9AC700E3DE37 /* Launch Screen.storyboard */; };
 		CAD9ABA9272E9CEB00E3DE37 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD9ABA8272E9CEB00E3DE37 /* AuthViewModel.swift */; };
 		CAD9ABAC272E9D2600E3DE37 /* AuthResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD9ABAB272E9D2600E3DE37 /* AuthResponse.swift */; };
+		CAD9ABAF272EA6C900E3DE37 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD9ABAE272EA6C900E3DE37 /* ProfileView.swift */; };
+		CAD9ABB2272EA6EB00E3DE37 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD9ABB1272EA6EB00E3DE37 /* MainView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -118,6 +120,8 @@
 		CAD9ABA6272E9AC700E3DE37 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		CAD9ABA8272E9CEB00E3DE37 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
 		CAD9ABAB272E9D2600E3DE37 /* AuthResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthResponse.swift; sourceTree = "<group>"; };
+		CAD9ABAE272EA6C900E3DE37 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		CAD9ABB1272EA6EB00E3DE37 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -198,6 +202,8 @@
 		CAD9AB2C272E5C5900E3DE37 /* TrainProject */ = {
 			isa = PBXGroup;
 			children = (
+				CAD9ABB0272EA6DD00E3DE37 /* Main */,
+				CAD9ABAD272EA6BA00E3DE37 /* Profile */,
 				CAD9ABAA272E9D1900E3DE37 /* Model */,
 				CAD9ABA3272E9A1E00E3DE37 /* common */,
 				CAD9AB99272E861300E3DE37 /* AuthScreen */,
@@ -302,6 +308,22 @@
 				CAD9ABAB272E9D2600E3DE37 /* AuthResponse.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		CAD9ABAD272EA6BA00E3DE37 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				CAD9ABAE272EA6C900E3DE37 /* ProfileView.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		CAD9ABB0272EA6DD00E3DE37 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				CAD9ABB1272EA6EB00E3DE37 /* MainView.swift */,
+			);
+			path = Main;
 			sourceTree = "<group>";
 		};
 		CD968313A1959DAB1C1F2838 /* Frameworks */ = {
@@ -600,10 +622,12 @@
 			files = (
 				CAD9AB30272E5C5900E3DE37 /* ContentView.swift in Sources */,
 				CAD9AB93272E7F3900E3DE37 /* UIFont+Custom.swift in Sources */,
+				CAD9ABAF272EA6C900E3DE37 /* ProfileView.swift in Sources */,
 				CAD9AB98272E816900E3DE37 /* StartScreen.swift in Sources */,
 				CAD9AB95272E7F4700E3DE37 /* UIColor+Custom.swift in Sources */,
 				CAD9ABAC272E9D2600E3DE37 /* AuthResponse.swift in Sources */,
 				CAD9ABA9272E9CEB00E3DE37 /* AuthViewModel.swift in Sources */,
+				CAD9ABB2272EA6EB00E3DE37 /* MainView.swift in Sources */,
 				CAD9AB2E272E5C5900E3DE37 /* TrainProjectApp.swift in Sources */,
 				CAD9AB9B272E862700E3DE37 /* AuthScreen.swift in Sources */,
 				CAD9ABA5272E9A4F00E3DE37 /* NetworkService.swift in Sources */,
