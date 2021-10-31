@@ -23,6 +23,16 @@
 		CAD9AB79272E618600E3DE37 /* WidgetProject.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD9AB78272E618600E3DE37 /* WidgetProject.swift */; };
 		CAD9AB7B272E618A00E3DE37 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CAD9AB7A272E618A00E3DE37 /* Assets.xcassets */; };
 		CAD9AB7F272E618A00E3DE37 /* WidgetProjectExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = CAD9AB74272E618600E3DE37 /* WidgetProjectExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		CAD9AB93272E7F3900E3DE37 /* UIFont+Custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD9AB92272E7F3900E3DE37 /* UIFont+Custom.swift */; };
+		CAD9AB95272E7F4700E3DE37 /* UIColor+Custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD9AB94272E7F4600E3DE37 /* UIColor+Custom.swift */; };
+		CAD9AB98272E816900E3DE37 /* StartScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD9AB97272E816900E3DE37 /* StartScreen.swift */; };
+		CAD9AB9B272E862700E3DE37 /* AuthScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD9AB9A272E862700E3DE37 /* AuthScreen.swift */; };
+		CAD9AB9C272E8B6500E3DE37 /* BalooPaaji2-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CAD9AB84272E7E3400E3DE37 /* BalooPaaji2-Regular.ttf */; };
+		CAD9AB9D272E8B6500E3DE37 /* BalooPaaji2-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CAD9AB86272E7E3400E3DE37 /* BalooPaaji2-SemiBold.ttf */; };
+		CAD9AB9E272E8B6600E3DE37 /* JollyLodger-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CAD9AB85272E7E3400E3DE37 /* JollyLodger-Regular.ttf */; };
+		CAD9AB9F272E8B6600E3DE37 /* BalooPaaji2-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CAD9AB87272E7E3400E3DE37 /* BalooPaaji2-Bold.ttf */; };
+		CAD9ABA0272E8B6600E3DE37 /* BalooPaaji2-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CAD9AB88272E7E3400E3DE37 /* BalooPaaji2-ExtraBold.ttf */; };
+		CAD9ABA1272E8B6600E3DE37 /* BalooPaaji2-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CAD9AB89272E7E3400E3DE37 /* BalooPaaji2-Medium.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,7 +83,7 @@
 		6424188F7B18D12702EB8EA9 /* Pods-TrainProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrainProject.debug.xcconfig"; path = "Target Support Files/Pods-TrainProject/Pods-TrainProject.debug.xcconfig"; sourceTree = "<group>"; };
 		7EA3CB80336EC149A8BD91C1 /* Pods-TrainProject-TrainProjectUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrainProject-TrainProjectUITests.release.xcconfig"; path = "Target Support Files/Pods-TrainProject-TrainProjectUITests/Pods-TrainProject-TrainProjectUITests.release.xcconfig"; sourceTree = "<group>"; };
 		8CA892D5C14D5F5DA2A4267A /* Pods_TrainProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TrainProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		CAD9AB2A272E5C5900E3DE37 /* TrainProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TrainProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CAD9AB2A272E5C5900E3DE37 /* ScareMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScareMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CAD9AB2D272E5C5900E3DE37 /* TrainProjectApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainProjectApp.swift; sourceTree = "<group>"; };
 		CAD9AB2F272E5C5900E3DE37 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		CAD9AB31272E5C6200E3DE37 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -89,6 +99,17 @@
 		CAD9AB78272E618600E3DE37 /* WidgetProject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetProject.swift; sourceTree = "<group>"; };
 		CAD9AB7A272E618A00E3DE37 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CAD9AB7C272E618A00E3DE37 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CAD9AB84272E7E3400E3DE37 /* BalooPaaji2-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BalooPaaji2-Regular.ttf"; sourceTree = "<group>"; };
+		CAD9AB85272E7E3400E3DE37 /* JollyLodger-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "JollyLodger-Regular.ttf"; sourceTree = "<group>"; };
+		CAD9AB86272E7E3400E3DE37 /* BalooPaaji2-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BalooPaaji2-SemiBold.ttf"; sourceTree = "<group>"; };
+		CAD9AB87272E7E3400E3DE37 /* BalooPaaji2-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BalooPaaji2-Bold.ttf"; sourceTree = "<group>"; };
+		CAD9AB88272E7E3400E3DE37 /* BalooPaaji2-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BalooPaaji2-ExtraBold.ttf"; sourceTree = "<group>"; };
+		CAD9AB89272E7E3400E3DE37 /* BalooPaaji2-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BalooPaaji2-Medium.ttf"; sourceTree = "<group>"; };
+		CAD9AB90272E7EC500E3DE37 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		CAD9AB92272E7F3900E3DE37 /* UIFont+Custom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Custom.swift"; sourceTree = "<group>"; };
+		CAD9AB94272E7F4600E3DE37 /* UIColor+Custom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Custom.swift"; sourceTree = "<group>"; };
+		CAD9AB97272E816900E3DE37 /* StartScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartScreen.swift; sourceTree = "<group>"; };
+		CAD9AB9A272E862700E3DE37 /* AuthScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthScreen.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,7 +179,7 @@
 		CAD9AB2B272E5C5900E3DE37 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				CAD9AB2A272E5C5900E3DE37 /* TrainProject.app */,
+				CAD9AB2A272E5C5900E3DE37 /* ScareMe.app */,
 				CAD9AB3A272E5C6200E3DE37 /* TrainProjectTests.xctest */,
 				CAD9AB44272E5C6200E3DE37 /* TrainProjectUITests.xctest */,
 				CAD9AB74272E618600E3DE37 /* WidgetProjectExtension.appex */,
@@ -169,6 +190,11 @@
 		CAD9AB2C272E5C5900E3DE37 /* TrainProject */ = {
 			isa = PBXGroup;
 			children = (
+				CAD9AB99272E861300E3DE37 /* AuthScreen */,
+				CAD9AB96272E815800E3DE37 /* StartScreen */,
+				CAD9AB91272E7F2300E3DE37 /* Extensious */,
+				CAD9AB90272E7EC500E3DE37 /* Info.plist */,
+				CAD9AB83272E7E1D00E3DE37 /* Font */,
 				CAD9AB2D272E5C5900E3DE37 /* TrainProjectApp.swift */,
 				CAD9AB2F272E5C5900E3DE37 /* ContentView.swift */,
 				CAD9AB31272E5C6200E3DE37 /* Assets.xcassets */,
@@ -212,6 +238,44 @@
 			path = WidgetProject;
 			sourceTree = "<group>";
 		};
+		CAD9AB83272E7E1D00E3DE37 /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				CAD9AB87272E7E3400E3DE37 /* BalooPaaji2-Bold.ttf */,
+				CAD9AB88272E7E3400E3DE37 /* BalooPaaji2-ExtraBold.ttf */,
+				CAD9AB89272E7E3400E3DE37 /* BalooPaaji2-Medium.ttf */,
+				CAD9AB84272E7E3400E3DE37 /* BalooPaaji2-Regular.ttf */,
+				CAD9AB86272E7E3400E3DE37 /* BalooPaaji2-SemiBold.ttf */,
+				CAD9AB85272E7E3400E3DE37 /* JollyLodger-Regular.ttf */,
+			);
+			path = Font;
+			sourceTree = "<group>";
+		};
+		CAD9AB91272E7F2300E3DE37 /* Extensious */ = {
+			isa = PBXGroup;
+			children = (
+				CAD9AB92272E7F3900E3DE37 /* UIFont+Custom.swift */,
+				CAD9AB94272E7F4600E3DE37 /* UIColor+Custom.swift */,
+			);
+			path = Extensious;
+			sourceTree = "<group>";
+		};
+		CAD9AB96272E815800E3DE37 /* StartScreen */ = {
+			isa = PBXGroup;
+			children = (
+				CAD9AB97272E816900E3DE37 /* StartScreen.swift */,
+			);
+			path = StartScreen;
+			sourceTree = "<group>";
+		};
+		CAD9AB99272E861300E3DE37 /* AuthScreen */ = {
+			isa = PBXGroup;
+			children = (
+				CAD9AB9A272E862700E3DE37 /* AuthScreen.swift */,
+			);
+			path = AuthScreen;
+			sourceTree = "<group>";
+		};
 		CD968313A1959DAB1C1F2838 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -248,7 +312,7 @@
 				CAD9AB58272E600600E3DE37 /* SwiftUIX */,
 			);
 			productName = TrainProject;
-			productReference = CAD9AB2A272E5C5900E3DE37 /* TrainProject.app */;
+			productReference = CAD9AB2A272E5C5900E3DE37 /* ScareMe.app */;
 			productType = "com.apple.product-type.application";
 		};
 		CAD9AB39272E5C6200E3DE37 /* TrainProjectTests */ = {
@@ -362,7 +426,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CAD9AB9D272E8B6500E3DE37 /* BalooPaaji2-SemiBold.ttf in Resources */,
+				CAD9AB9E272E8B6600E3DE37 /* JollyLodger-Regular.ttf in Resources */,
+				CAD9ABA0272E8B6600E3DE37 /* BalooPaaji2-ExtraBold.ttf in Resources */,
 				CAD9AB35272E5C6200E3DE37 /* Preview Assets.xcassets in Resources */,
+				CAD9ABA1272E8B6600E3DE37 /* BalooPaaji2-Medium.ttf in Resources */,
+				CAD9AB9C272E8B6500E3DE37 /* BalooPaaji2-Regular.ttf in Resources */,
+				CAD9AB9F272E8B6600E3DE37 /* BalooPaaji2-Bold.ttf in Resources */,
 				CAD9AB32272E5C6200E3DE37 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -500,7 +570,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				CAD9AB30272E5C5900E3DE37 /* ContentView.swift in Sources */,
+				CAD9AB93272E7F3900E3DE37 /* UIFont+Custom.swift in Sources */,
+				CAD9AB98272E816900E3DE37 /* StartScreen.swift in Sources */,
+				CAD9AB95272E7F4700E3DE37 /* UIColor+Custom.swift in Sources */,
 				CAD9AB2E272E5C5900E3DE37 /* TrainProjectApp.swift in Sources */,
+				CAD9AB9B272E862700E3DE37 /* AuthScreen.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -679,11 +753,12 @@
 				DEVELOPMENT_TEAM = 7NZPBTA9R6;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TrainProject/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -691,7 +766,7 @@
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.perekrist.TrainProject;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = ScareMe;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -711,11 +786,12 @@
 				DEVELOPMENT_TEAM = 7NZPBTA9R6;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TrainProject/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -723,7 +799,7 @@
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.perekrist.TrainProject;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = ScareMe;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

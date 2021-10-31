@@ -6,12 +6,15 @@
 //
 
 import SwiftUI
+import NavigationStack
 
 @main
 struct TrainProjectApp: App {
+//  @State var navigationStack = NavigationStack()
     var body: some Scene {
         WindowGroup {
-            ContentView()
+          StartScreen()
+//            .environmentObject(navigationStack)
         }
     }
 }
