@@ -43,6 +43,15 @@
 		CAD9ABB8272EC44400E3DE37 /* ChatsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD9ABB7272EC44400E3DE37 /* ChatsResponse.swift */; };
 		CAD9ABBB272ECE3200E3DE37 /* MessagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD9ABBA272ECE3200E3DE37 /* MessagesView.swift */; };
 		CAD9ABBD272ED31300E3DE37 /* MessagesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD9ABBC272ED31300E3DE37 /* MessagesViewModel.swift */; };
+		CAD9ABBE272EE9E500E3DE37 /* BalooPaaji2-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CAD9AB86272E7E3400E3DE37 /* BalooPaaji2-SemiBold.ttf */; };
+		CAD9ABBF272EE9E500E3DE37 /* BalooPaaji2-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CAD9AB87272E7E3400E3DE37 /* BalooPaaji2-Bold.ttf */; };
+		CAD9ABC0272EE9E500E3DE37 /* BalooPaaji2-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CAD9AB89272E7E3400E3DE37 /* BalooPaaji2-Medium.ttf */; };
+		CAD9ABC1272EE9E500E3DE37 /* JollyLodger-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CAD9AB85272E7E3400E3DE37 /* JollyLodger-Regular.ttf */; };
+		CAD9ABC2272EE9E500E3DE37 /* BalooPaaji2-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CAD9AB84272E7E3400E3DE37 /* BalooPaaji2-Regular.ttf */; };
+		CAD9ABC3272EE9E500E3DE37 /* BalooPaaji2-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CAD9AB88272E7E3400E3DE37 /* BalooPaaji2-ExtraBold.ttf */; };
+		CAD9ABC4272EEA7A00E3DE37 /* UIFont+Custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD9AB92272E7F3900E3DE37 /* UIFont+Custom.swift */; };
+		CAD9ABC5272EEA7C00E3DE37 /* UIColor+Custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD9AB94272E7F4600E3DE37 /* UIColor+Custom.swift */; };
+		CAD9ABC6272EEC5700E3DE37 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CAD9AB31272E5C6200E3DE37 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -526,6 +535,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CAD9ABC0272EE9E500E3DE37 /* BalooPaaji2-Medium.ttf in Resources */,
+				CAD9ABC1272EE9E500E3DE37 /* JollyLodger-Regular.ttf in Resources */,
+				CAD9ABC3272EE9E500E3DE37 /* BalooPaaji2-ExtraBold.ttf in Resources */,
+				CAD9ABBE272EE9E500E3DE37 /* BalooPaaji2-SemiBold.ttf in Resources */,
+				CAD9ABBF272EE9E500E3DE37 /* BalooPaaji2-Bold.ttf in Resources */,
+				CAD9ABC2272EE9E500E3DE37 /* BalooPaaji2-Regular.ttf in Resources */,
+				CAD9ABC6272EEC5700E3DE37 /* Assets.xcassets in Resources */,
 				CAD9AB7B272E618A00E3DE37 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -680,6 +696,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				CAD9AB79272E618600E3DE37 /* WidgetProject.swift in Sources */,
+				CAD9ABC4272EEA7A00E3DE37 /* UIFont+Custom.swift in Sources */,
+				CAD9ABC5272EEA7C00E3DE37 /* UIColor+Custom.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

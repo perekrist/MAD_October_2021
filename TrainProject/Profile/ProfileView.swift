@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SwiftUIX
 
 struct Topic {
   let id: String = UUID().uuidString
@@ -14,6 +15,13 @@ struct Topic {
 }
 
 struct ProfileView: View {
+  var formatter: DateFormatter {
+    let dateFormatter = DateFormatter()
+    dateFormatter.dateFormat = "dd MMMM YYYY - hh:mm"
+    return dateFormatter
+  }
+  @State var date: Date = Date()
+  @State var isPresented: Bool = false
   @State var name: String = ""
   @State var about: String = ""
   @State var topics: [Topic] = [Topic(name: "Pumpkins"),
@@ -75,6 +83,23 @@ struct ProfileView: View {
           }
         }
         
+        Text("Party Date")
+          .foregroundColor(.white)
+          .font(.regular(24))
+          .padding(.top, 24)
+        
+        HStack {
+          Text(isPresented ? "\(formatter.string(from: Date()))" : "Select Date and Time")
+            .foregroundColor(.orangeLight)
+            .font(.regular(24))
+            .underline()
+            .onTapGesture {
+              isPresented.toggle()
+            }
+          Spacer()
+        }.padding(.horizontal, 16)
+          .padding(.top, 8)
+        
         Spacer()
         
         NavigationLink {
@@ -95,5 +120,6 @@ struct ProfileView: View {
         }
       }
     }.navigationBarHidden(true)
+
   }
 }
