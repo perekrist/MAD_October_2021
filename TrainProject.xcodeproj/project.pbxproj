@@ -33,6 +33,10 @@
 		CAD9AB9F272E8B6600E3DE37 /* BalooPaaji2-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CAD9AB87272E7E3400E3DE37 /* BalooPaaji2-Bold.ttf */; };
 		CAD9ABA0272E8B6600E3DE37 /* BalooPaaji2-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CAD9AB88272E7E3400E3DE37 /* BalooPaaji2-ExtraBold.ttf */; };
 		CAD9ABA1272E8B6600E3DE37 /* BalooPaaji2-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CAD9AB89272E7E3400E3DE37 /* BalooPaaji2-Medium.ttf */; };
+		CAD9ABA5272E9A4F00E3DE37 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD9ABA4272E9A4F00E3DE37 /* NetworkService.swift */; };
+		CAD9ABA7272E9AC700E3DE37 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CAD9ABA6272E9AC700E3DE37 /* Launch Screen.storyboard */; };
+		CAD9ABA9272E9CEB00E3DE37 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD9ABA8272E9CEB00E3DE37 /* AuthViewModel.swift */; };
+		CAD9ABAC272E9D2600E3DE37 /* AuthResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD9ABAB272E9D2600E3DE37 /* AuthResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -110,6 +114,10 @@
 		CAD9AB94272E7F4600E3DE37 /* UIColor+Custom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Custom.swift"; sourceTree = "<group>"; };
 		CAD9AB97272E816900E3DE37 /* StartScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartScreen.swift; sourceTree = "<group>"; };
 		CAD9AB9A272E862700E3DE37 /* AuthScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthScreen.swift; sourceTree = "<group>"; };
+		CAD9ABA4272E9A4F00E3DE37 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		CAD9ABA6272E9AC700E3DE37 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		CAD9ABA8272E9CEB00E3DE37 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
+		CAD9ABAB272E9D2600E3DE37 /* AuthResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -190,13 +198,13 @@
 		CAD9AB2C272E5C5900E3DE37 /* TrainProject */ = {
 			isa = PBXGroup;
 			children = (
+				CAD9ABAA272E9D1900E3DE37 /* Model */,
+				CAD9ABA3272E9A1E00E3DE37 /* common */,
 				CAD9AB99272E861300E3DE37 /* AuthScreen */,
 				CAD9AB96272E815800E3DE37 /* StartScreen */,
 				CAD9AB91272E7F2300E3DE37 /* Extensious */,
 				CAD9AB90272E7EC500E3DE37 /* Info.plist */,
 				CAD9AB83272E7E1D00E3DE37 /* Font */,
-				CAD9AB2D272E5C5900E3DE37 /* TrainProjectApp.swift */,
-				CAD9AB2F272E5C5900E3DE37 /* ContentView.swift */,
 				CAD9AB31272E5C6200E3DE37 /* Assets.xcassets */,
 				CAD9AB33272E5C6200E3DE37 /* Preview Content */,
 			);
@@ -272,8 +280,28 @@
 			isa = PBXGroup;
 			children = (
 				CAD9AB9A272E862700E3DE37 /* AuthScreen.swift */,
+				CAD9ABA8272E9CEB00E3DE37 /* AuthViewModel.swift */,
 			);
 			path = AuthScreen;
+			sourceTree = "<group>";
+		};
+		CAD9ABA3272E9A1E00E3DE37 /* common */ = {
+			isa = PBXGroup;
+			children = (
+				CAD9AB2D272E5C5900E3DE37 /* TrainProjectApp.swift */,
+				CAD9AB2F272E5C5900E3DE37 /* ContentView.swift */,
+				CAD9ABA4272E9A4F00E3DE37 /* NetworkService.swift */,
+				CAD9ABA6272E9AC700E3DE37 /* Launch Screen.storyboard */,
+			);
+			path = common;
+			sourceTree = "<group>";
+		};
+		CAD9ABAA272E9D1900E3DE37 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CAD9ABAB272E9D2600E3DE37 /* AuthResponse.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		CD968313A1959DAB1C1F2838 /* Frameworks */ = {
@@ -429,6 +457,7 @@
 				CAD9AB9D272E8B6500E3DE37 /* BalooPaaji2-SemiBold.ttf in Resources */,
 				CAD9AB9E272E8B6600E3DE37 /* JollyLodger-Regular.ttf in Resources */,
 				CAD9ABA0272E8B6600E3DE37 /* BalooPaaji2-ExtraBold.ttf in Resources */,
+				CAD9ABA7272E9AC700E3DE37 /* Launch Screen.storyboard in Resources */,
 				CAD9AB35272E5C6200E3DE37 /* Preview Assets.xcassets in Resources */,
 				CAD9ABA1272E8B6600E3DE37 /* BalooPaaji2-Medium.ttf in Resources */,
 				CAD9AB9C272E8B6500E3DE37 /* BalooPaaji2-Regular.ttf in Resources */,
@@ -573,8 +602,11 @@
 				CAD9AB93272E7F3900E3DE37 /* UIFont+Custom.swift in Sources */,
 				CAD9AB98272E816900E3DE37 /* StartScreen.swift in Sources */,
 				CAD9AB95272E7F4700E3DE37 /* UIColor+Custom.swift in Sources */,
+				CAD9ABAC272E9D2600E3DE37 /* AuthResponse.swift in Sources */,
+				CAD9ABA9272E9CEB00E3DE37 /* AuthViewModel.swift in Sources */,
 				CAD9AB2E272E5C5900E3DE37 /* TrainProjectApp.swift in Sources */,
 				CAD9AB9B272E862700E3DE37 /* AuthScreen.swift in Sources */,
+				CAD9ABA5272E9A4F00E3DE37 /* NetworkService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -756,7 +788,6 @@
 				INFOPLIST_FILE = TrainProject/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -789,7 +820,6 @@
 				INFOPLIST_FILE = TrainProject/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;

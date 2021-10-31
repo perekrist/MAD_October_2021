@@ -15,9 +15,7 @@ struct StartScreen: View {
         VStack(alignment: .center) {
           VStack {
             Spacer()
-            Text("ScareMe")
-              .foregroundColor(.orangeLight)
-              .font(.jRegular(100))
+            Image("icon")
             Spacer()
           }
           NavigationLink {
@@ -52,7 +50,7 @@ struct StartScreen: View {
         
         }
       }
-    }
+    }.accentColor(.white)
   }
 }
 

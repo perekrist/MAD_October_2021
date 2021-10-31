@@ -12,9 +12,10 @@ struct AuthScreen: View {
   @State var isSignIn: Bool
   @State var canLogin = false
   
-  @State var email: String = ""
-  @State var password: String = ""
-  @State var repeatPassword: String = ""
+  @State var email: String = "mail@mail.com"
+  @State var password: String = "qwerty12345"
+  @State var repeatPassword: String = "qwerty12345"
+  @State var viewModel = AuthViewModel()
   
   var body: some View {
     ZStack {
@@ -53,6 +54,7 @@ struct AuthScreen: View {
           if !isSignIn {
             TextField("Repeat Password",
                       text: $repeatPassword)
+              .accentColor(.white)
               .autocapitalization(.none)
               .padding(.vertical, 18)
               .padding(.horizontal, 24)
@@ -89,8 +91,7 @@ struct AuthScreen: View {
             }
         }
       }
-    }.accentColor(.white)
-      .foregroundColor(.white)
+    }
   }
   
   func checkFields() {
@@ -99,12 +100,22 @@ struct AuthScreen: View {
       GrowingNotificationBanner(title: "Fill all fields!",
                                 style: .danger).show()
       canLogin = false
-    } else if !email.contains("@") || email.contains(".") {
+    } else if !(email.contains("@") && email.contains(".")) {
       GrowingNotificationBanner(title: "Email is not correct!",
                                 style: .danger).show()
       canLogin = false
     } else {
-      canLogin = true
+      if isSignIn {
+        viewModel.signIn(email: email,
+                         password: password) {
+          canLogin = true
+        }
+      } else {
+        viewModel.signUp(email: email,
+                         password: password) {
+          canLogin = true
+        }
+      }
     }
   }
 }
