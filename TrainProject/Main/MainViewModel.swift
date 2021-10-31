@@ -23,7 +23,7 @@ struct Chat: Identifiable, Codable {
   }
   
   init() {
-    id = ""
+    id = "f8782738-1432-46d6-8edd-f504e22ec1c5"
     title = "chat name"
     avatar = nil
   }
@@ -48,7 +48,7 @@ struct Message: Identifiable, Codable {
   
   init() {
     id = ""
-    text = "I hope we will meet with you. May be not today...I hope we will meet with you. May be not today...I hope we will meet with you. May be not today...I hope we will meet with you. May be not today..."
+    text = "I hope we will meet with you. May be not today...\nI hope we will meet with you. May be not today...I hope we will meet with you. May be not today...I hope we will meet with you. May be not today..."
     date = nil
     user = nil
   }
@@ -74,7 +74,7 @@ struct User: Codable {
 class MainViewModel: ObservableObject {
   var names: [String] = ["Mary", "Kristine", "Meggy", "Lilit"]
   @Published var last: [User] = []
-  @Published var chats: [ChatsResponse] = [ChatsResponse(), ChatsResponse()]
+  @Published var chats: [ChatsResponse] = []
   let networkService = NetworkService()
   
   init() {
@@ -83,7 +83,7 @@ class MainViewModel: ObservableObject {
   
   func getChats() {
     networkService.getChats { chats in
-//      self.chats = chats
+      self.chats = chats
     }
   }
 }

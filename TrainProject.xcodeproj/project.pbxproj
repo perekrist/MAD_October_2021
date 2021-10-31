@@ -42,6 +42,7 @@
 		CAD9ABB6272EC2B700E3DE37 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD9ABB5272EC2B700E3DE37 /* MainViewModel.swift */; };
 		CAD9ABB8272EC44400E3DE37 /* ChatsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD9ABB7272EC44400E3DE37 /* ChatsResponse.swift */; };
 		CAD9ABBB272ECE3200E3DE37 /* MessagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD9ABBA272ECE3200E3DE37 /* MessagesView.swift */; };
+		CAD9ABBD272ED31300E3DE37 /* MessagesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD9ABBC272ED31300E3DE37 /* MessagesViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -128,6 +129,7 @@
 		CAD9ABB5272EC2B700E3DE37 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		CAD9ABB7272EC44400E3DE37 /* ChatsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatsResponse.swift; sourceTree = "<group>"; };
 		CAD9ABBA272ECE3200E3DE37 /* MessagesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesView.swift; sourceTree = "<group>"; };
+		CAD9ABBC272ED31300E3DE37 /* MessagesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -339,6 +341,7 @@
 			isa = PBXGroup;
 			children = (
 				CAD9ABBA272ECE3200E3DE37 /* MessagesView.swift */,
+				CAD9ABBC272ED31300E3DE37 /* MessagesViewModel.swift */,
 			);
 			path = Chat;
 			sourceTree = "<group>";
@@ -649,6 +652,7 @@
 				CAD9ABB8272EC44400E3DE37 /* ChatsResponse.swift in Sources */,
 				CAD9AB2E272E5C5900E3DE37 /* TrainProjectApp.swift in Sources */,
 				CAD9AB9B272E862700E3DE37 /* AuthScreen.swift in Sources */,
+				CAD9ABBD272ED31300E3DE37 /* MessagesViewModel.swift in Sources */,
 				CAD9ABA5272E9A4F00E3DE37 /* NetworkService.swift in Sources */,
 				CAD9ABB6272EC2B700E3DE37 /* MainViewModel.swift in Sources */,
 			);

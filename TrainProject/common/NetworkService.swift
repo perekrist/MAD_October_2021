@@ -15,6 +15,18 @@ extension NetworkService {
       completion(response)
     }
   }
+  
+  func getMessages(id: String, completion: @escaping (([Message]) -> ())) {
+    baseRequest(url: "/chat/\(id)/message?limit=20&offset=0", method: .get) { messages in
+      completion(messages)
+    }
+  }
+  
+  func sendMessage(id: String, text: String, completion: @escaping ((Message) -> ())) {
+    baseRequest(url: "/chat/\(id)/message", method: .post) { messages in
+      completion(messages)
+    }
+  }
 }
 
 extension NetworkService {
@@ -56,7 +68,7 @@ class NetworkService {
                encoding: JSONEncoding.default,
                headers: headers)
       .responseData { response in
-        print(response.request?.url, response.request?.headers, parameters)
+        print(response.request?.url, response.request?.headers, parameters, response.response?.statusCode)
         switch response.result {
         case .success(let data):
           let decoder = JSONDecoder()

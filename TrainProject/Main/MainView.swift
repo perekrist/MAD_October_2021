@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SDWebImageSwiftUI
 
 struct MainView: View {
   @ObservedObject var viewModel = MainViewModel()
@@ -41,19 +42,23 @@ struct MainView: View {
           VStack(alignment: .leading) {
             ForEach(viewModel.chats, id: \.chat.id) { chat in
               NavigationLink {
-                MessagesView()
+                MessagesView(avatar: chat.chat.avatar,
+                             id: chat.chat.id,
+                             name: chat.chat.title ?? "-")
               } label: {
                 HStack {
-                  Image("logo")
+                  WebImage(url: URL(string: chat.chat.avatar ?? ""))
                     .resizable()
+                    .scaledToFill()
                     .frame(width: 64, height: 64)
+                    .clipShape(Circle())
                     .padding(16)
                   VStack(alignment: .leading) {
                     Text(chat.chat.title ?? "-")
-                      .foregroundColor(.black)
+                      .foregroundColor(.white)
                       .font(.regular(16))
                     Text(chat.lastMessage?.text ?? "no last message")
-                      .lineLimit(0)
+                      .lineLimit(10)
                       .multilineTextAlignment(.leading)
                       .foregroundColor(.white)
                       .font(.regular(16))
