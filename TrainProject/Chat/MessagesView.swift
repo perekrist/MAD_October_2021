@@ -96,7 +96,9 @@ struct MessagesView: View {
       viewModel.getMessages(id: id)
     })
       .onAppear {
-        viewModel.getMessages(id: id)
+        if viewModel.messages.isEmpty {
+          viewModel.getMessages(id: id)
+        }
       }
   }
 }
