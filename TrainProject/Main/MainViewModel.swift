@@ -21,18 +21,12 @@ struct Chat: Identifiable, Codable {
     avatar = try container.decodeIfPresent(String.self,
                                                          forKey: .avatar)
   }
-  
-  init() {
-    id = "f8782738-1432-46d6-8edd-f504e22ec1c5"
-    title = "chat name"
-    avatar = nil
-  }
 }
 
 struct Message: Identifiable, Codable {
   let id: String
   let text: String?
-  let date: String?
+  let createdAt: String?
   let user: User?
   
   init(from decoder: Decoder) throws {
@@ -40,17 +34,10 @@ struct Message: Identifiable, Codable {
     id = try container.decode(String.self, forKey: .id)
     text = try container.decodeIfPresent(String.self,
                                                          forKey: .text)
-    date = try container.decodeIfPresent(String.self,
-                                                         forKey: .date)
+    createdAt = try container.decodeIfPresent(String.self,
+                                                         forKey: .createdAt)
     user = try container.decodeIfPresent(User.self,
                                                          forKey: .user)
-  }
-  
-  init() {
-    id = ""
-    text = "I hope we will meet with you. May be not today...\nI hope we will meet with you. May be not today...I hope we will meet with you. May be not today...I hope we will meet with you. May be not today..."
-    date = nil
-    user = nil
   }
 }
 
@@ -79,6 +66,10 @@ class MainViewModel: ObservableObject {
   
   init() {
     self.last = names.sorted().map { User(name: $0) }
+    
+    networkService.getProfile { me in
+      UserDefaults.standard.set(me.userId, forKey: "id")
+    }
   }
   
   func getChats() {

@@ -17,9 +17,4 @@ struct ChatsResponse: Codable {
     lastMessage = try container.decodeIfPresent(Message.self,
                                        forKey: .lastMessage)
   }
-  
-  init() {
-    chat = Chat()
-    lastMessage = Message()
-  }
 }

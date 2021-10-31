@@ -14,7 +14,7 @@ class MessagesViewModel: ObservableObject {
   
   func getMessages(id: String) {
     networkService.getMessages(id: id) { messages in
-      self.messages = messages
+      self.messages = messages.reversed()
     }
   }
   

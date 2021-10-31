@@ -10,6 +10,14 @@ import Alamofire
 import NotificationBannerSwift
 
 extension NetworkService {
+  func getProfile(completion: @escaping ((User) -> ())) {
+    baseRequest(url: "/profile", method: .get) { response in
+      completion(response)
+    }
+  }
+}
+
+extension NetworkService {
   func getChats(completion: @escaping (([ChatsResponse]) -> ())) {
     baseRequest(url: "/chat", method: .get) { response in
       completion(response)

@@ -15,6 +15,7 @@ struct MessagesView: View {
   @State var topics: [String] = ["Queens", "Royalty", "Knives"]
   @State var message: String = ""
   @ObservedObject var viewModel = MessagesViewModel()
+  @State var myID = UserDefaults.standard.value(forKey: "id") as? String ?? ""
   
   let timer = Timer.publish(every: 30, on: .main, in: .common).autoconnect()
   
@@ -45,15 +46,34 @@ struct MessagesView: View {
             }
           }.padding(.top, -25)
         }.padding(.top, -25)
-        VStack(alignment: .leading) {
-        ScrollView(.vertical) {
-          ForEach(viewModel.messages) { msg in
-            Text(msg.text ?? "")
-              .foregroundColor(.white)
-              .font(.regular(15))
+        VStack {
+          ScrollView(.vertical) {
+            ForEach(viewModel.messages) { msg in
+              HStack {
+                if msg.user?.userId == myID {
+                  Spacer()
+                }
+                VStack(spacing: 8) {
+                  Text(msg.text ?? "")
+                    .padding(.vertical, 7)
+                    .padding(.horizontal, 12)
+                    .foregroundColor(msg.user?.userId == myID ? .dark : .white)
+                    .font(.regular(15))
+                    .background(msg.user?.userId == myID ? Color.orangeLight : Color.accent)
+                    .cornerRadius(20)
+                    .frame(maxWidth: UIScreen.main.bounds.width * 0.7)
+                  Text(msg.createdAt ?? "")
+                    .foregroundColor(.gray)
+                    .font(.regular(11))
+                }
+                if msg.user?.userId != myID {
+                  Spacer()
+                }
+              }
+            }
           }
-        }
-        }
+        }.frame(maxWidth: .infinity)
+          .padding()
         HStack(spacing: 19) {
           TextField("",
                     text: $message)
@@ -75,8 +95,8 @@ struct MessagesView: View {
     }.onReceive(timer, perform: { _ in
       viewModel.getMessages(id: id)
     })
-    .onAppear {
-      viewModel.getMessages(id: id)
-    }
+      .onAppear {
+        viewModel.getMessages(id: id)
+      }
   }
 }
