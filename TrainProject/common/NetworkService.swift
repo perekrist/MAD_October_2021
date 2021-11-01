@@ -16,6 +16,13 @@ extension NetworkService {
     }
   }
 }
+extension NetworkService {
+  func getTopics(completion: @escaping (([Topic]) -> ())) {
+    baseRequest(url: "/topic", method: .get) { topics in
+      completion(topics)
+    }
+  }
+}
 
 extension NetworkService {
   func getChats(completion: @escaping (([ChatsResponse]) -> ())) {
@@ -39,7 +46,7 @@ extension NetworkService {
 
 extension NetworkService {
   func login(email: String, password: String,
-              completion: @escaping ((AuthResponse) -> ())) {
+             completion: @escaping ((AuthResponse) -> ())) {
     let parameters = ["email": email,
                       "password": password]
     baseRequest(url: "/auth/login", method: .post,
