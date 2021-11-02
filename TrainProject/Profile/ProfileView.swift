@@ -38,7 +38,7 @@ struct ProfileView: View {
     var height = CGFloat.zero
     ZStack {
       Color.dark.edgesIgnoringSafeArea(.all)
-      VStack {
+      ScrollView(.vertical) {
         Text("Why are you scary?")
           .foregroundColor(.white)
           .font(.regular(24))
@@ -68,67 +68,82 @@ struct ProfileView: View {
           .padding(.horizontal, 16)
           .foregroundColor(.white)
         
-        Text("Party Topics")
-          .foregroundColor(.white)
-          .font(.regular(24))
-          .padding(.top, 24)
-        
-        GeometryReader { geo in
-          ZStack(alignment: .topLeading, content: {
-            ForEach(viewModel.topics) { topic in
-              Text(topic.title)
-                .padding(.horizontal)
-                .foregroundColor(topic.isSelected ? .dark : .orangeLight)
-                .font(.regular(14))
-                .background(!topic.isSelected ? Color.dark : Color.orangeLight)
-                .clipShape(Capsule())
-                .overlay(
-                  Capsule()
-                    .stroke(Color.orangeLight, lineWidth: 1)
-                )
-                .alignmentGuide(.leading) { dimension in
-                  if (abs(width - dimension.width) > geo.size.width) {
-                    width = 0
-                    height -= dimension.height
+        VStack {
+          Text("Party Topics")
+            .foregroundColor(.white)
+            .font(.regular(24))
+          
+          GeometryReader { geo in
+            ZStack(alignment: .topLeading, content: {
+              ForEach(viewModel.topics) { topic in
+                Text(topic.title)
+                  .padding(.horizontal, 8)
+                  .foregroundColor(topic.isSelected ? .dark : .orangeLight)
+                  .font(.regular(14))
+                  .background(!topic.isSelected ? Color.dark : Color.orangeLight)
+                  .clipShape(Capsule())
+                  .overlay(
+                    Capsule()
+                      .stroke(Color.orangeLight, lineWidth: 1)
+                  )
+                  .padding(.top, 7)
+                  .padding(.trailing, 9)
+                  .alignmentGuide(.leading) { dimension in
+                    if (abs(width - dimension.width) > geo.size.width) {
+                      width = 0
+                      height -= dimension.height
+                    }
+                    let result = width
+                    if topic.id == viewModel.topics.last!.id {
+                      width = 0
+                    } else {
+                      width -= dimension.width
+                    }
+                    return result
                   }
-                  let result = width
-                  if topic.id == viewModel.topics.last!.id {
-                    width = 0
-                  } else {
-                    width -= dimension.width
+                  .alignmentGuide(.top) { dimension in
+                    let result = height
+                    if topic.id == viewModel.topics.last!.id {
+                      height = 0
+                    }
+                    return result
                   }
-                  return result
-                }
-                .alignmentGuide(.top) { dimension in
-                  let result = height
-                  if topic.id == viewModel.topics.last!.id {
-                    height = 0
+                  .onTapGesture {
+                    if let index = viewModel.topics.firstIndex(where: { $0.id == topic.id }) {
+                      viewModel.topics[index].isSelected.toggle()
+                    }
                   }
-                  return result
-                }
-                .padding(7)
-            }
-          })
+              }
+            })
+          }
+          .padding(.top, -30)
         }.padding()
         
-        Text("Party Date")
-          .foregroundColor(.white)
-          .font(.regular(24))
-          .padding(.top, 24)
-        
-        HStack {
-          Text(isPresented ? "\(formatter.string(from: Date()))" : "Select Date and Time")
-            .foregroundColor(.orangeLight)
+        VStack {
+          Text("Party Date")
+            .foregroundColor(.white)
             .font(.regular(24))
-            .underline()
-            .onTapGesture {
-              isPresented.toggle()
-            }
-          Spacer()
-        }.padding(.horizontal, 16)
-          .padding(.top, 8)
-        
-        Spacer()
+          
+          HStack {
+            Text(isPresented ? "\(formatter.string(from: date))" : "Select Date and Time")
+              .foregroundColor(.orangeLight)
+              .font(.regular(24))
+              .underline()
+              .onTapGesture {
+                isPresented.toggle()
+              }
+            Spacer()
+          }.padding(.horizontal, 16)
+            .padding(.top, -20)
+          
+          if isPresented {
+            DatePicker("", selection: $date)
+              .datePickerStyle(CompactDatePickerStyle())
+              .accentColor(.orangeLight)
+              .padding()
+          }
+          
+        }.padding(.top, 120)
         
         NavigationLink {
           MainView()
@@ -137,7 +152,7 @@ struct ProfileView: View {
             .padding(.horizontal)
             .font(.regular(16))
             .foregroundColor(.dark)
-            .frame(maxWidth: .infinity, maxHeight: 56,
+            .frame(maxWidth: .infinity, minHeight: 56,
                    alignment: .center)
             .background(Color.orangeLight)
             .cornerRadius(16)
@@ -145,11 +160,21 @@ struct ProfileView: View {
             .shadow(color: .orangeLight,
                     radius: 10,
                     x: 0, y: 0)
-        }
+        }.padding(.top, 36)
       }
     }.onAppear {
       viewModel.getTopics()
     }
     .navigationBarHidden(true)
+  }
+}
+
+extension View {
+  @ViewBuilder func applyTextColor(_ color: Color) -> some View {
+    if UITraitCollection.current.userInterfaceStyle == .light {
+      self.colorInvert().colorMultiply(color)
+    } else {
+      self.colorMultiply(color)
+    }
   }
 }

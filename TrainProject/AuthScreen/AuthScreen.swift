@@ -69,11 +69,11 @@ struct AuthScreen: View {
         Spacer()
         
         NavigationLink(isActive: $canLogin) {
-          if isSignIn {
-            MainView()
-          } else {
+//          if isSignIn {
+//            MainView()
+//          } else {
             ProfileView()
-          }
+//          }
         } label: {
           Text(isSignIn ? "Sign In" : "Sign Up")
             .font(.regular(16))
