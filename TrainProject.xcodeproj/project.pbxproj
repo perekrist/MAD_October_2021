@@ -26,7 +26,7 @@
 		CAD9AB93272E7F3900E3DE37 /* UIFont+Custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD9AB92272E7F3900E3DE37 /* UIFont+Custom.swift */; };
 		CAD9AB95272E7F4700E3DE37 /* UIColor+Custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD9AB94272E7F4600E3DE37 /* UIColor+Custom.swift */; };
 		CAD9AB98272E816900E3DE37 /* StartScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD9AB97272E816900E3DE37 /* StartScreen.swift */; };
-		CAD9AB9B272E862700E3DE37 /* AuthScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD9AB9A272E862700E3DE37 /* AuthScreen.swift */; };
+		CAD9AB9B272E862700E3DE37 /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD9AB9A272E862700E3DE37 /* AuthView.swift */; };
 		CAD9AB9C272E8B6500E3DE37 /* BalooPaaji2-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CAD9AB84272E7E3400E3DE37 /* BalooPaaji2-Regular.ttf */; };
 		CAD9AB9D272E8B6500E3DE37 /* BalooPaaji2-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CAD9AB86272E7E3400E3DE37 /* BalooPaaji2-SemiBold.ttf */; };
 		CAD9AB9E272E8B6600E3DE37 /* JollyLodger-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CAD9AB85272E7E3400E3DE37 /* JollyLodger-Regular.ttf */; };
@@ -129,7 +129,7 @@
 		CAD9AB92272E7F3900E3DE37 /* UIFont+Custom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Custom.swift"; sourceTree = "<group>"; };
 		CAD9AB94272E7F4600E3DE37 /* UIColor+Custom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Custom.swift"; sourceTree = "<group>"; };
 		CAD9AB97272E816900E3DE37 /* StartScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartScreen.swift; sourceTree = "<group>"; };
-		CAD9AB9A272E862700E3DE37 /* AuthScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthScreen.swift; sourceTree = "<group>"; };
+		CAD9AB9A272E862700E3DE37 /* AuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
 		CAD9ABA4272E9A4F00E3DE37 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		CAD9ABA6272E9AC700E3DE37 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		CAD9ABA8272E9CEB00E3DE37 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
@@ -305,7 +305,7 @@
 		CAD9AB99272E861300E3DE37 /* AuthScreen */ = {
 			isa = PBXGroup;
 			children = (
-				CAD9AB9A272E862700E3DE37 /* AuthScreen.swift */,
+				CAD9AB9A272E862700E3DE37 /* AuthView.swift */,
 				CAD9ABA8272E9CEB00E3DE37 /* AuthViewModel.swift */,
 			);
 			path = AuthScreen;
@@ -670,7 +670,7 @@
 				CAD9ABB2272EA6EB00E3DE37 /* MainView.swift in Sources */,
 				CAD9ABB8272EC44400E3DE37 /* ChatsResponse.swift in Sources */,
 				CAD9AB2E272E5C5900E3DE37 /* TrainProjectApp.swift in Sources */,
-				CAD9AB9B272E862700E3DE37 /* AuthScreen.swift in Sources */,
+				CAD9AB9B272E862700E3DE37 /* AuthView.swift in Sources */,
 				CAD9ABBD272ED31300E3DE37 /* MessagesViewModel.swift in Sources */,
 				CAD9ABA5272E9A4F00E3DE37 /* NetworkService.swift in Sources */,
 				CAD9ABE22730245000E3DE37 /* ProfileViewModel.swift in Sources */,

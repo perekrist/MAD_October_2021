@@ -19,7 +19,7 @@ struct StartScreen: View {
             Spacer()
           }
           NavigationLink {
-            AuthScreen(isSignIn: false)
+            AuthView(viewModel: AuthViewModel(isSignIn: false))
           } label: {
             Text("Sign Up")
               .font(.regular(16))
@@ -37,9 +37,8 @@ struct StartScreen: View {
             .foregroundColor(.orangeDark)
             .padding(.top, 24)
           
-          
           NavigationLink {
-            AuthScreen(isSignIn: true)
+            AuthView(viewModel: AuthViewModel(isSignIn: true))
           } label: {
             Text("Sign in")
               .foregroundColor(.orangeLight)
@@ -47,16 +46,8 @@ struct StartScreen: View {
               .underline()
           }.padding(.top, 8)
             .padding(.bottom, 30)
-        
         }
       }
     }.accentColor(.white)
-  }
-}
-
-
-struct StartScreen_Previews: PreviewProvider {
-  static var previews: some View {
-    StartScreen()
   }
 }

@@ -5,21 +5,60 @@
 //  Created by Кристина Перегудова on 31.10.2021.
 //
 
-import Foundation
+import SwiftUI
+import NotificationBannerSwift
 
-struct AuthViewModel {
-  let networkService = NetworkService()
+class AuthViewModel: ObservableObject {
+  @Published var isSignIn: Bool
+  @Published var canLogin = false
+  @Published var email: String = "mail@mail.com"
+  @Published var password: String = "qwerty12345"
+  @Published var repeatPassword: String = "qwerty12345"
   
-  func signIn(email: String, password: String,
-              completion: @escaping () -> ()) {
+  private let networkService = NetworkService()
+  
+  init(isSignIn: Bool) {
+    self.isSignIn = isSignIn
+  }
+  
+  func checkFields() {
+    if email.isEmpty || password.isEmpty || (!isSignIn && repeatPassword.isEmpty) {
+      GrowingNotificationBanner(title: "Fill all fields!",
+                                style: .danger).show()
+      canLogin = false
+    } else if !(email.contains("@") && email.contains(".")) {
+      GrowingNotificationBanner(title: "Email is not correct!",
+                                style: .danger).show()
+      canLogin = false
+    } else {
+      auth {
+        self.canLogin = true
+      }
+    }
+  }
+  
+  private func auth(completion: @escaping () -> ()) {
+    if isSignIn {
+      signIn(email: email, password: password) {
+        completion()
+      }
+    } else {
+      signUp(email: email, password: password) {
+        completion()
+      }
+    }
+  }
+  
+  private func signIn(email: String, password: String,
+                      completion: @escaping () -> ()) {
     networkService.login(email: email, password: password) { response in
       UserDefaults.standard.set(response.accessToken, forKey: "token")
       completion()
     }
   }
   
-  func signUp(email: String, password: String,
-              completion: @escaping () -> ()) {
+  private func signUp(email: String, password: String,
+                      completion: @escaping () -> ()) {
     networkService.register(email: email, password: password) { response in
       UserDefaults.standard.set(response.accessToken, forKey: "token")
       completion()

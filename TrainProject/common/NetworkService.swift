@@ -15,14 +15,13 @@ extension NetworkService {
       completion(response)
     }
   }
-}
-extension NetworkService {
   func getTopics(completion: @escaping (([Topic]) -> ())) {
     baseRequest(url: "/topic", method: .get) { topics in
       completion(topics)
     }
   }
 }
+
 
 extension NetworkService {
   func getChats(completion: @escaping (([ChatsResponse]) -> ())) {
@@ -56,7 +55,7 @@ extension NetworkService {
   }
   
   func register(email: String, password: String,
-              completion: @escaping ((AuthResponse) -> ())) {
+                completion: @escaping ((AuthResponse) -> ())) {
     let parameters = ["email": email,
                       "password": password]
     baseRequest(url: "/auth/register", method: .post,
@@ -67,14 +66,14 @@ extension NetworkService {
 }
 
 class NetworkService {
-  
   static let baseURL = "http://45.144.179.101/scare-me/api/mobile/v1"
+  
   func baseRequest<T: Decodable>(url: String, method: HTTPMethod,
                                  parameters: Parameters? = nil,
                                  completion: @escaping ((T) -> ())) {
     var headers: HTTPHeaders = [:]
     if let token = UserDefaults.standard.value(forKey: "token") as? String,
-        !token.isEmpty {
+       !token.isEmpty {
       headers["Authorization"] = "Bearer " + token
     }
     AF.request(NetworkService.baseURL + url,
