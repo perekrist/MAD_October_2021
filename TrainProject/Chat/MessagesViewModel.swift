@@ -27,7 +27,9 @@ class MessagesViewModel: ObservableObject {
   
   func getMessages() {
     networkService.getMessages(id: id) { messages in
-      self.messages = messages.reversed()
+      let message = Message(id: UUID().uuidString, text: "Hello", createdAt: "12345678", user: User(name: "Kristina"))
+      self.messages = [message, message.copy(text: "New one"), message.copy(text: "Another one", user: User(name: "Alex"))]
+//      self.messages = messages.reversed()
     }
   }
   
