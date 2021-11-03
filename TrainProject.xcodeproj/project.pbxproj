@@ -54,6 +54,11 @@
 		CAD9ABC6272EEC5700E3DE37 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CAD9AB31272E5C6200E3DE37 /* Assets.xcassets */; };
 		CAD9ABE22730245000E3DE37 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD9ABE12730245000E3DE37 /* ProfileViewModel.swift */; };
 		CAD9AC4627327E4800E3DE37 /* ShowBannerSingleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD9AC4527327E4700E3DE37 /* ShowBannerSingleton.swift */; };
+		CAD9AC492732806700E3DE37 /* Chat.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD9AC482732806700E3DE37 /* Chat.swift */; };
+		CAD9AC4B2732808900E3DE37 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD9AC4A2732808900E3DE37 /* Message.swift */; };
+		CAD9AC4D273280AD00E3DE37 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD9AC4C273280AD00E3DE37 /* User.swift */; };
+		CAD9AC502732815D00E3DE37 /* ChatsItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD9AC4F2732815D00E3DE37 /* ChatsItemView.swift */; };
+		CAD9AC522732817D00E3DE37 /* ChatsItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD9AC512732817D00E3DE37 /* ChatsItemViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -143,6 +148,11 @@
 		CAD9ABBC272ED31300E3DE37 /* MessagesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesViewModel.swift; sourceTree = "<group>"; };
 		CAD9ABE12730245000E3DE37 /* ProfileViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		CAD9AC4527327E4700E3DE37 /* ShowBannerSingleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowBannerSingleton.swift; sourceTree = "<group>"; };
+		CAD9AC482732806700E3DE37 /* Chat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chat.swift; sourceTree = "<group>"; };
+		CAD9AC4A2732808900E3DE37 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		CAD9AC4C273280AD00E3DE37 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		CAD9AC4F2732815D00E3DE37 /* ChatsItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatsItemView.swift; sourceTree = "<group>"; };
+		CAD9AC512732817D00E3DE37 /* ChatsItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatsItemViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -346,6 +356,8 @@
 		CAD9ABB0272EA6DD00E3DE37 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				CAD9AC4E2732814300E3DE37 /* ChatsItem */,
+				CAD9AC472732805700E3DE37 /* Models */,
 				CAD9ABB1272EA6EB00E3DE37 /* MainView.swift */,
 				CAD9ABB5272EC2B700E3DE37 /* MainViewModel.swift */,
 			);
@@ -359,6 +371,25 @@
 				CAD9ABBC272ED31300E3DE37 /* MessagesViewModel.swift */,
 			);
 			path = Chat;
+			sourceTree = "<group>";
+		};
+		CAD9AC472732805700E3DE37 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				CAD9AC482732806700E3DE37 /* Chat.swift */,
+				CAD9AC4A2732808900E3DE37 /* Message.swift */,
+				CAD9AC4C273280AD00E3DE37 /* User.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		CAD9AC4E2732814300E3DE37 /* ChatsItem */ = {
+			isa = PBXGroup;
+			children = (
+				CAD9AC4F2732815D00E3DE37 /* ChatsItemView.swift */,
+				CAD9AC512732817D00E3DE37 /* ChatsItemViewModel.swift */,
+			);
+			path = ChatsItem;
 			sourceTree = "<group>";
 		};
 		CD968313A1959DAB1C1F2838 /* Frameworks */ = {
@@ -664,17 +695,22 @@
 			files = (
 				CAD9AB30272E5C5900E3DE37 /* ContentView.swift in Sources */,
 				CAD9AB93272E7F3900E3DE37 /* UIFont+Custom.swift in Sources */,
+				CAD9AC502732815D00E3DE37 /* ChatsItemView.swift in Sources */,
 				CAD9ABAF272EA6C900E3DE37 /* ProfileView.swift in Sources */,
 				CAD9AB98272E816900E3DE37 /* StartScreen.swift in Sources */,
 				CAD9ABBB272ECE3200E3DE37 /* MessagesView.swift in Sources */,
 				CAD9AB95272E7F4700E3DE37 /* UIColor+Custom.swift in Sources */,
+				CAD9AC522732817D00E3DE37 /* ChatsItemViewModel.swift in Sources */,
 				CAD9ABAC272E9D2600E3DE37 /* AuthResponse.swift in Sources */,
+				CAD9AC4B2732808900E3DE37 /* Message.swift in Sources */,
+				CAD9AC4D273280AD00E3DE37 /* User.swift in Sources */,
 				CAD9AC4627327E4800E3DE37 /* ShowBannerSingleton.swift in Sources */,
 				CAD9ABA9272E9CEB00E3DE37 /* AuthViewModel.swift in Sources */,
 				CAD9ABB2272EA6EB00E3DE37 /* MainView.swift in Sources */,
 				CAD9ABB8272EC44400E3DE37 /* ChatsResponse.swift in Sources */,
 				CAD9AB2E272E5C5900E3DE37 /* TrainProjectApp.swift in Sources */,
 				CAD9AB9B272E862700E3DE37 /* AuthView.swift in Sources */,
+				CAD9AC492732806700E3DE37 /* Chat.swift in Sources */,
 				CAD9ABBD272ED31300E3DE37 /* MessagesViewModel.swift in Sources */,
 				CAD9ABA5272E9A4F00E3DE37 /* NetworkService.swift in Sources */,
 				CAD9ABE22730245000E3DE37 /* ProfileViewModel.swift in Sources */,

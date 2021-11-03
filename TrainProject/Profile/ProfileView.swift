@@ -146,7 +146,7 @@ struct ProfileView: View {
         }.padding(.top, 120)
         
         NavigationLink {
-          MainView()
+          MainView(viewModel: MainViewModel())
         } label: {
           Text("Save")
             .padding(.horizontal)

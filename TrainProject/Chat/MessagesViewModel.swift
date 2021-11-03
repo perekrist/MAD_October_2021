@@ -9,18 +9,32 @@ import Foundation
 import SwiftUI
 
 class MessagesViewModel: ObservableObject {
+  @Published var chat: Chat
   @Published var messages: [Message] = []
-  let networkService = NetworkService()
+  @Published var topics: [String] = ["Queens", "Royalty", "Knives"]
+  @Published var message: String = ""
+  @Published var myID = UserDefaults.standard.value(forKey: "id") as? String ?? ""
   
-  func getMessages(id: String) {
+  private var id: String {
+    return chat.id
+  }
+  
+  private let networkService = NetworkService()
+  
+  init(chat: Chat) {
+    self.chat = chat
+  }
+  
+  func getMessages() {
     networkService.getMessages(id: id) { messages in
       self.messages = messages.reversed()
     }
   }
   
-  func sendMessage(id: String, text: String) {
-    networkService.sendMessage(id: id, text: text) { message in
+  func sendMessage() {
+    networkService.sendMessage(id: id, text: message) { message in
       self.messages.append(message)
+      self.message = ""
     }
   }
 }

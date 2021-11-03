@@ -9,7 +9,7 @@ import SwiftUI
 import SDWebImageSwiftUI
 
 struct MainView: View {
-  @ObservedObject var viewModel = MainViewModel()
+  @ObservedObject var viewModel: MainViewModel
   
   var body: some View {
     ZStack(alignment: .leading) {
@@ -19,7 +19,6 @@ struct MainView: View {
           Text("Last")
             .foregroundColor(.white)
             .font(.regular(36))
-          
           ScrollView(.horizontal) {
             HStack {
               ForEach(viewModel.last, id: \.userId) { user in
@@ -40,38 +39,12 @@ struct MainView: View {
             .foregroundColor(.white)
             .font(.regular(36))
           VStack(alignment: .leading) {
-            ForEach(viewModel.chats, id: \.chat.id) { chat in
+            ForEach(viewModel.chatsItemViewModels) { viewModel in
               NavigationLink {
-                MessagesView(avatar: chat.chat.avatar,
-                             id: chat.chat.id,
-                             name: chat.chat.title ?? "-")
+                MessagesView(viewModel: MessagesViewModel(chat: viewModel.chat))
               } label: {
-                HStack {
-                  WebImage(url: URL(string: chat.chat.avatar ?? ""))
-                    .resizable()
-                    .scaledToFill()
-                    .frame(width: 64, height: 64)
-                    .clipShape(Circle())
-                    .padding(16)
-                  VStack(alignment: .leading) {
-                    Text(chat.chat.title ?? "-")
-                      .foregroundColor(.white)
-                      .font(.regular(16))
-                    Text(chat.lastMessage?.text ?? "no last message")
-                      .lineLimit(10)
-                      .multilineTextAlignment(.leading)
-                      .foregroundColor(.white)
-                      .font(.regular(16))
-                      .padding(.trailing, 16)
-                    Rectangle()
-                      .foregroundColor(.orangeDark)
-                      .frame(width: 280,
-                             height: 1,
-                             alignment: .trailing)
-                  }
-                }
+                ChatsItemView(viewModel: viewModel)
               }
-
             }
           }.padding(.top, -50)
         }.padding(.leading, 21)
