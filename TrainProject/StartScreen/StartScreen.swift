@@ -19,7 +19,7 @@ struct StartScreen: View {
             Spacer()
           }
           NavigationLink {
-            AuthView(viewModel: AuthViewModel(isSignIn: false))
+            AuthView().isSignIn(false).build()
           } label: {
             Text("Sign Up")
               .font(.regular(16))
@@ -38,7 +38,7 @@ struct StartScreen: View {
             .padding(.top, 24)
           
           NavigationLink {
-            AuthView(viewModel: AuthViewModel(isSignIn: true))
+            AuthView().isSignIn(true).build()
           } label: {
             Text("Sign in")
               .foregroundColor(.orangeLight)

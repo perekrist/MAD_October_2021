@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct AuthView: View {
-  @ObservedObject var viewModel: AuthViewModel
+  @ObservedObject var viewModel = AuthViewModel()
   
   var body: some View {
     ZStack {
@@ -85,6 +85,18 @@ struct AuthView: View {
         }
       }
     }
+  }
+  
+  
+  // MARK: - Builder patter
+  func isSignIn(_ isSignIn: Bool) -> AuthView {
+    self.viewModel.isSignIn = isSignIn
+    return self
+  }
+  
+  // MARK: - yes
+  func build() -> AuthView {
+    return self
   }
 }
 

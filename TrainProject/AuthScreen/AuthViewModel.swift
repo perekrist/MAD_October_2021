@@ -9,17 +9,13 @@ import SwiftUI
 import NotificationBannerSwift
 
 class AuthViewModel: ObservableObject {
-  @Published var isSignIn: Bool
+  @Published var isSignIn: Bool = false
   @Published var canLogin = false
   @Published var email: String = "mail@mail.com"
   @Published var password: String = "qwerty12345"
   @Published var repeatPassword: String = "qwerty12345"
   
   private let networkService = NetworkService()
-  
-  init(isSignIn: Bool) {
-    self.isSignIn = isSignIn
-  }
   
   func checkFields() {
     if email.isEmpty || password.isEmpty || (!isSignIn && repeatPassword.isEmpty) {
