@@ -146,7 +146,7 @@ struct ProfileView: View {
         }.padding(.top, 120)
         
         NavigationLink {
-          MainView(viewModel: MainViewModel())
+          TabBar()
         } label: {
           Text("Save")
             .padding(.horizontal)

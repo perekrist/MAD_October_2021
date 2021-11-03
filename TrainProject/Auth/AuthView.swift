@@ -63,7 +63,7 @@ struct AuthView: View {
         
         NavigationLink(isActive: $viewModel.canLogin) {
           if viewModel.isSignIn {
-            MainView(viewModel: MainViewModel())
+            TabBar()
           } else {
             ProfileView()
           }

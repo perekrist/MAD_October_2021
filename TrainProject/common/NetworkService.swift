@@ -10,6 +10,26 @@ import Alamofire
 import NotificationBannerSwift
 
 extension NetworkService {
+  func getFeed(completion: @escaping (([User]) -> ())) {
+    baseRequest(url: "/user/feed", method: .get) { response in
+      completion(response)
+    }
+  }
+  
+  func like(userID: String, completion: @escaping ((EmptyResponse) -> ())) {
+    baseRequest(url: "/user/\(userID)/like", method: .post) { response in
+      completion(response)
+    }
+  }
+  
+  func dislike(userID: String, completion: @escaping ((EmptyResponse) -> ())) {
+    baseRequest(url: "/user/\(userID)/dislike", method: .post) { response in
+      completion(response)
+    }
+  }
+}
+
+extension NetworkService {
   func getProfile(completion: @escaping ((User) -> ())) {
     baseRequest(url: "/profile", method: .get) { response in
       completion(response)

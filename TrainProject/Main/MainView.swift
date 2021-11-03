@@ -9,7 +9,7 @@ import SwiftUI
 import SDWebImageSwiftUI
 
 struct MainView: View {
-  @ObservedObject var viewModel: MainViewModel
+  @ObservedObject private var viewModel = MainViewModel()
   
   var body: some View {
     ZStack(alignment: .leading) {
