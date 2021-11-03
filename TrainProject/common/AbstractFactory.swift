@@ -6,54 +6,83 @@
 //
 
 import Foundation
+import UIKit
 
-protocol SuperHero {
-  static func make(name: String, power: String) -> (SuperHero)
-  func resolve(problem: String) -> Bool
+protocol IPhoneFactory {
+  func getSmallButton() -> SmallButton
+  func getNormalButton() -> NormalButton
 }
 
-typealias SuperHeroFactory = (String, String) -> SuperHero
+class SmallButton {
+  var image: UIImage?
+}
 
-struct MarvelSuperHero: SuperHero {
-  static func make(name: String, power: String) -> SuperHero {
-    return MarvelSuperHero()
+class NormalButton {
+  var image: UIImage?
+  var title: String?
+}
+
+class Small15: SmallButton {
+  override init() {
+    super.init()
+    self.image = UIImage(named: "small15")
+  }
+}
+class Normal15: NormalButton {
+  override init() {
+    super.init()
+    self.image = UIImage(named: "normal15")
+    self.title = "Normal15"
+  }
+}
+
+class Small14: SmallButton {
+  override init() {
+    super.init()
+    self.image = UIImage(named: "small14")
+  }
+}
+class Normal14: NormalButton {
+  override init() {
+    super.init()
+    self.image = UIImage(named: "normal14")
+    self.title = "Normal14"
+  }
+}
+
+class iOS15Factory: IPhoneFactory {
+  func getSmallButton() -> SmallButton {
+    return Small15()
   }
   
-  func resolve(problem: String) -> Bool {
-    return true
+  func getNormalButton() -> NormalButton {
+    return Normal15()
   }
 }
 
-struct DCSuperHero: SuperHero {
-  static func make(name: String, power: String) -> (SuperHero) {
-    return DCSuperHero()
+class iOS14Factory: IPhoneFactory {
+  func getSmallButton() -> SmallButton {
+    return Small14()
   }
   
-  func resolve(problem: String) -> Bool {
-    return false
+  func getNormalButton() -> NormalButton {
+    return Normal14()
   }
 }
 
-enum SuperHeroType {
-  case marvel, dc
-}
-
-enum SuperHeroHelper {
-  static func factoryFor(type : SuperHeroType) -> SuperHeroFactory {
-    switch type {
-    case .marvel:
-      return MarvelSuperHero.make
-    case .dc:
-      return DCSuperHero.make
+class CurrenClass {
+  init() {
+    let factory = getFactory()
+    let smallButton = factory.getSmallButton()
+    let normalButton = factory.getNormalButton()
+    
+    // do smth with buttons
+  }
+  
+  func getFactory() -> IPhoneFactory {
+    if UIDevice.current.systemVersion == "15.0" {
+      return iOS15Factory()
     }
+    return iOS14Factory()
   }
 }
-
-
-let superHeroFactoryMarvel = SuperHeroHelper.factoryFor(type: .marvel)
-let superHeroMarvel = superHeroFactoryMarvel("Spiderman", "Spider Powers")
-//superHeroMarvel.resolve(problem: "Disturbs on the street")
-
-let superHeroFactoryDC = SuperHeroHelper.factoryFor(type: .dc)
-let superHeroDC = superHeroFactoryDC("Batman", "Bat Powers")
-//superHeroDC.resolve(problem: "Bank robbery")
