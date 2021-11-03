@@ -92,14 +92,11 @@ class NetworkService {
             completion(decodedData)
           } catch (let error) {
             print("catch", error.localizedDescription)
-            GrowingNotificationBanner(title: error.localizedDescription,
-                                      style: .danger).show()
+            ShowBannerSingleton.shared.showErrorBanner(error.localizedDescription)
           }
         case .failure(let error):
           print("failure", error.localizedDescription)
-          GrowingNotificationBanner(title: error.localizedDescription,
-                                    subtitle: error.errorDescription,
-                                    style: .danger).show()
+          ShowBannerSingleton.shared.showErrorBanner(error.localizedDescription)
         }
       }
     

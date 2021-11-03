@@ -23,12 +23,10 @@ class AuthViewModel: ObservableObject {
   
   func checkFields() {
     if email.isEmpty || password.isEmpty || (!isSignIn && repeatPassword.isEmpty) {
-      GrowingNotificationBanner(title: "Fill all fields!",
-                                style: .danger).show()
+      ShowBannerSingleton.shared.showErrorBanner("Fill all fields!")
       canLogin = false
     } else if !(email.contains("@") && email.contains(".")) {
-      GrowingNotificationBanner(title: "Email is not correct!",
-                                style: .danger).show()
+      ShowBannerSingleton.shared.showErrorBanner("Email is not correct!")
       canLogin = false
     } else {
       auth {

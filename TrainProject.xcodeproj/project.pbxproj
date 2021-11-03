@@ -53,6 +53,7 @@
 		CAD9ABC5272EEA7C00E3DE37 /* UIColor+Custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD9AB94272E7F4600E3DE37 /* UIColor+Custom.swift */; };
 		CAD9ABC6272EEC5700E3DE37 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CAD9AB31272E5C6200E3DE37 /* Assets.xcassets */; };
 		CAD9ABE22730245000E3DE37 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD9ABE12730245000E3DE37 /* ProfileViewModel.swift */; };
+		CAD9AC4627327E4800E3DE37 /* ShowBannerSingleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD9AC4527327E4700E3DE37 /* ShowBannerSingleton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -141,6 +142,7 @@
 		CAD9ABBA272ECE3200E3DE37 /* MessagesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesView.swift; sourceTree = "<group>"; };
 		CAD9ABBC272ED31300E3DE37 /* MessagesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesViewModel.swift; sourceTree = "<group>"; };
 		CAD9ABE12730245000E3DE37 /* ProfileViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
+		CAD9AC4527327E4700E3DE37 /* ShowBannerSingleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowBannerSingleton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -318,6 +320,7 @@
 				CAD9AB2F272E5C5900E3DE37 /* ContentView.swift */,
 				CAD9ABA4272E9A4F00E3DE37 /* NetworkService.swift */,
 				CAD9ABA6272E9AC700E3DE37 /* Launch Screen.storyboard */,
+				CAD9AC4527327E4700E3DE37 /* ShowBannerSingleton.swift */,
 			);
 			path = common;
 			sourceTree = "<group>";
@@ -666,6 +669,7 @@
 				CAD9ABBB272ECE3200E3DE37 /* MessagesView.swift in Sources */,
 				CAD9AB95272E7F4700E3DE37 /* UIColor+Custom.swift in Sources */,
 				CAD9ABAC272E9D2600E3DE37 /* AuthResponse.swift in Sources */,
+				CAD9AC4627327E4800E3DE37 /* ShowBannerSingleton.swift in Sources */,
 				CAD9ABA9272E9CEB00E3DE37 /* AuthViewModel.swift in Sources */,
 				CAD9ABB2272EA6EB00E3DE37 /* MainView.swift in Sources */,
 				CAD9ABB8272EC44400E3DE37 /* ChatsResponse.swift in Sources */,
